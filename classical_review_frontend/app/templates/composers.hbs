@@ -1,0 +1,10 @@
+<h3>Composers</h3>
+
+<ul>
+  {{#each model as |composer|}}
+    <li>
+      {{composer.name}} {{#link-to "composer.edit" composer}}edit{{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+{{#link-to 'composer.new'}}Add Composer{{/link-to}}
