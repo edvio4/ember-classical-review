@@ -8,7 +8,6 @@ export default Ember.Route.extend({
     add() {
       const newComposer = this.store.createRecord('composer', this.currentModel);
       newComposer.save().then(() => {
-        // flashMessages.success('Composer successfully added!');
         this.transitionTo('composers');
       });
     },
