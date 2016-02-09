@@ -1,0 +1,12 @@
+<h3>Pieces</h3>
+
+<ul>
+  {{#each model as |piece|}}
+    <li>
+      {{#link-to 'piece' piece}}
+      {{piece.title}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+{{#link-to 'piece.new'}}Add Piece{{/link-to}}

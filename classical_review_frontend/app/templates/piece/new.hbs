@@ -1,0 +1,21 @@
+<h3>Add New Piece</h3>
+<form>
+  <div>
+    <label>Title:</label>
+    {{input type="text" value=piece.title}}
+  </div>
+  <div>
+    <select onchange={{action (mut composer-id) value="target.value"}}>
+      <option>Select a Composer</option>
+      {{#each composers as |composer|}}
+        <option value={{composer.id}}>
+        {{composer.name}}
+        </option>
+      {{/each}}
+    </select>
+  </div>
+  <div>
+    <button {{action 'add' composer-id piece}}>Add Piece</button>
+    <button {{action 'cancel' piece}}>Cancel</button>
+  </div>
+</form>

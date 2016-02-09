@@ -5,11 +5,13 @@ export default Ember.Route.extend({
     return this.store.findRecord('composer', params.id, { reload: true });
   },
   actions: {
-    editComposer() {
-      let composer = this.get('controller.model');
+    editComposer(composer) {
       composer.save().then(() => {
         this.transitionTo('composers');
       });
+    },
+    cancel() {
+      this.transitionTo('composers');
     }
   }
 });

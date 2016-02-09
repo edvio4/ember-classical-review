@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207154612) do
+ActiveRecord::Schema.define(version: 20160207190458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,14 @@ ActiveRecord::Schema.define(version: 20160207154612) do
 
   add_index "composers", ["name"], name: "index_composers_on_name", unique: true, using: :btree
 
+  create_table "pieces", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.integer  "composer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "pieces", ["title", "composer_id"], name: "index_pieces_on_title_and_composer_id", unique: true, using: :btree
+
+  add_foreign_key "pieces", "composers"
 end
