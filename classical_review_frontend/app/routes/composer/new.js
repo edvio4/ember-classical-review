@@ -2,16 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return {};
+    return this.store.createRecord('composer');
   },
   actions: {
-    add() {
-      const newComposer = this.store.createRecord('composer', this.currentModel);
-      newComposer.save().then(() => {
+    add(composer) {
+      composer.save().then(() => {
         this.transitionTo('composers');
       });
     },
-    cancel() {
+    cancel(composer) {
+      composer.rollbackAttributes();
       this.transitionTo('composers');
     }
   }
