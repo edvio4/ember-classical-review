@@ -1,0 +1,19 @@
+<h3>Add New Review</h3>
+<form>
+  <div>
+    <label>Title:</label>
+    {{input type="text" value=model.title}}
+  </div>
+  <div>
+    <label>Reviewer (your name):</label>
+    {{input type="text" value=model.writer}}
+  </div>
+  <div>
+    <label>Description:</label>
+    {{textarea value=model.description}}
+  </div>
+  <div>
+    <button {{action 'add' model}}>Add Review</button>
+    <button {{action 'cancel' model}}>Cancel</button>
+  </div>
+</form>
