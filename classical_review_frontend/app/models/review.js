@@ -2,6 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
-  composer: DS.belongsTo('composer'),
-  reviews: DS.hasMany('review')
+  description: DS.attr('string'),
+  writer: DS.attr('string'),
+  piece: DS.belongsTo('piece')
 });

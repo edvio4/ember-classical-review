@@ -21,8 +21,8 @@ export default Ember.Route.extend({
         this.transitionTo('piece', piece);
       });
     },
-    cancel() {
-      this.transitionTo('pieces');
+    cancel(piece) {
+      this.transitionTo('piece', piece);
     }
   }
 });

@@ -1,5 +1,6 @@
 class Composer < ActiveRecord::Base
   before_validation :capitalize_name
+  has_many :pieces
 
   validates :name, presence: true, uniqueness: true
 

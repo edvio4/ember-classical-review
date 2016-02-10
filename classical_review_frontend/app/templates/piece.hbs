@@ -1,8 +1,24 @@
+<div class="piece_show">
+  {{#link-to "pieces"}}Back to Pieces List{{/link-to}}
+</div>
 <h3>{{model.title}}</h3>
 <h4>Composer: {{model.composer.name}}</h4>
 <div>
   {{#link-to "piece.edit" model.id}}Edit Piece{{/link-to}}
 </div>
-<div class="">
-  {{#link-to "pieces"}}Back to Pieces List{{/link-to}}
+
+<div class="reviews">
+  <h4>Reviews</h4>
+  <div>
+    {{#link-to "piece.review.new"}}Add Review{{/link-to}}
+  </div>
+  <ul>
+    {{#each model.reviews as |review|}}
+      <li>Title: {{review.title}}</li>
+      <ul>
+        <li>Review: {{review.description}}</li>
+        <li>Written by: {{review.writer}}</li>
+      </ul>
+    {{/each}}
+  </ul>
 </div>
