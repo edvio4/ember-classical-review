@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+composers_pieces = [Mozart: {'Marriage of Figaro', 'Magic Flute'},
+        Beethoven: {'Symphony No. 7', 'Symphony No. 9'}]
+
+
+composers_pieces.each do |composer_pieces|
+  composer = Composer.create(name: composer_pieces.keys[0])
+  composer_pieces.values.each do |piece|
+    Piece.create(title: piece, composer: composer)
+  end
+end
