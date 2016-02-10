@@ -1,12 +1,20 @@
 <h3>Pieces</h3>
 
-<ul>
-  {{#each model as |piece|}}
-    <li>
-      {{#link-to 'piece' piece}}
-      {{piece.title}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+{{#each model as |composer|}}
+  {{#if composer.pieces}}
+    <h4>{{composer.name}}</h4>
+    {{#each composer.pieces as |piece|}}
+      <ul>
+          <li>
+            {{#link-to 'piece' piece.id}}
+            {{piece.title}}
+            {{/link-to}}
+          </li>
+      </ul>
+    {{/each}}
+  {{/if}}
+{{/each}}
 {{#link-to 'piece.new'}}Add Piece{{/link-to}}
+<div>
+  {{#link-to 'composers'}}List of Composers{{/link-to}}
+</div>
