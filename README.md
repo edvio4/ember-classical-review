@@ -15,3 +15,10 @@ cd classical_review_frontend
 npm install -g ember-cli@beta
 ember serve
 ```
+Visit `localhost:4200` to run the app locally.
+
+## To Dos
+
+- Figure out how to make cors more secure
+- Do more styling
+- Figure out to order objects in ember
