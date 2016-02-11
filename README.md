@@ -1,6 +1,8 @@
 # ember-classical-review
 
-I built this app to learn how to do simple CRUD functions with ember.js framework.
+I built this app to learn how to do simple CRUD functions with ember.js framework. This app allows you to review classical pieces.  You can add/edit composers.  You can add/edit pieces.  You can write reviews for a given piece.
+
+In a former life, I was training to be a classical violinist, so this app is about something I love.
  
 ## Running locally
 ```
